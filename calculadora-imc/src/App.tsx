@@ -1,9 +1,18 @@
 import { useState } from 'react';
 import styles from './App.module.css';
 import poweredImage from './assets/powered.png';
+import { levels, calculateimc } from './helpers/imc';
 const App = () => {
   const [heightfield, setHeightField] = useState<number>(0);
   const [weightfield, setWeightField] = useState<number>(0);
+
+  const handleCalculatorButton = () => {
+      if (heightfield && weightfield) {
+
+      } else {
+        alert("Preencha todos os campos corretamente")
+      }
+    }
   return(
     <div className={styles.main}>
       <header>
@@ -21,6 +30,13 @@ const App = () => {
             value={heightfield > 0 ? heightfield : ''}
             onChange={e => setHeightField(parseFloat(e.target.value))}
           />
+          <input
+            type="number"
+            placeholder="Digite o seu peso. Exemplo: 75.3 (em quilos)"
+            value={weightfield > 0 ? weightfield : ''}
+            onChange={e => setWeightField(parseFloat(e.target.value))}
+          />
+          <button onClick={handleCalculatorButton}>Calcular</button>
         </div>
         <div className={styles.rightSide}>
           ...
