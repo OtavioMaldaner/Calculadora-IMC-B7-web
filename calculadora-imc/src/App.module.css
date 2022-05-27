@@ -36,6 +36,9 @@ body {
     font-size: 14px;
     outline: 0;
 }
+.leftSide input:disabled {
+    opacity: 0.5;
+}
 .leftSide button {
     background-color: #227C9D;
     color: #FFF;
@@ -47,6 +50,9 @@ body {
     cursor: pointer;
     margin-top: 40px;
     transition: all ease 0.2s;
+}
+.leftSide button:disabled {
+    opacity: 0.5;
 }
 .leftSide button:hover {
     opacity: 0.8;
